@@ -1,0 +1,10 @@
+[
+    {
+        "taskAssignedBy"		:"Ganesh Swaminathan",
+        "taskAssignedTo"		:"Suja Aniyan",
+        "taskSummary"		    :"Development projects to be moved to CSC Dev Cloud",
+        "taskDetails"		    :"Development projects to be moved to CSC Dev Cloud",
+        "assignedDate"		    :{ "$date" : "2016-11-07T09:00:00.000+0530"},
+        "dueDate"			    :{ "$date" : "2016-11-14T09:00:00.000+0530"}
+	}
+] 

@@ -1,0 +1,13 @@
+{
+  "name": "tasktracker",
+  "version": "1.0.0",
+  "description": "For tracking of tasks",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Suja",
+  "dependencies": {
+    "express-session": "^1.14.2"
+  }
+}
