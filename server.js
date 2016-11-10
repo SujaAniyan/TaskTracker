@@ -102,20 +102,15 @@ notifier(imap).on('mail',function(mail){
     mailHtml =  mail.html;
     
     var request = require('request');
-    request.post('http://localhost:8080/api/v1/secure/task/', 
+    request.post('http://localhost:8080/api/v1/secure/tasks/',
          {form:
             {
              taskAssignedBy :senderName,
              taskAssignedTo :"CTO group",
-             taskSummary    :mailSubject,
-             taskDetails    :mailHtml
+             taskTitle    :mailSubject,
+             taskDetails    :mailHtml,
+             status       :"Open"
             }
     });   
     
 }).start();
-
-
-
-    
-
-

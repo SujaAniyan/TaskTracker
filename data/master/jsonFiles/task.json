@@ -2,9 +2,57 @@
     {
         "taskAssignedBy"		:"Ganesh Swaminathan",
         "taskAssignedTo"		:"Suja Aniyan",
-        "taskSummary"		    :"Development projects to be moved to CSC Dev Cloud",
+        "taskTitle"		    	:"Cloud Computing",
         "taskDetails"		    :"Development projects to be moved to CSC Dev Cloud",
         "assignedDate"		    :{ "$date" : "2016-11-07T09:00:00.000+0530"},
-        "dueDate"			    :{ "$date" : "2016-11-14T09:00:00.000+0530"}
+        "dueDate"			    :{ "$date" : "2016-11-14T09:00:00.000+0530"},
+        "status"				:"Open"
+	},
+
+	{
+        "taskAssignedBy"		:"Ganesh Swaminathan",
+        "taskAssignedTo"		:"Martin",
+        "taskTitle"		    	:"API Management",
+        "taskDetails"		    :"Development projects to be moved to CSC Dev Cloud",
+        "assignedDate"		    :{ "$date" : "2016-12-08T09:00:00.000+0530"},
+        "dueDate"			    :{ "$date" : "2016-12-29T09:00:00.000+0530"},
+        "status"				:"Open"
+	},
+
+	{
+        "taskAssignedBy"		:"Ganesh Swaminathan",
+        "taskAssignedTo"		:"Neil Fasen",
+        "taskTitle"		    	:"IOT",
+        "taskDetails"		    :"Development projects to be moved to CSC Dev Cloud",
+        "assignedDate"		    :{ "$date" : "2016-11-01T09:00:00.000+0530"},
+        "dueDate"			    :{ "$date" : "2016-11-06T09:00:00.000+0530"},
+        "status"				:"Open"
+	},
+	{
+        "taskAssignedBy"		:"Ganesh Swaminathan",
+        "taskAssignedTo"		:"Mark Zuker",
+        "taskTitle"		    	:"Hadoop",
+        "taskDetails"		    :"Development projects to be moved to CSC Dev Cloud",
+        "assignedDate"		    :{ "$date" : "2016-11-04T09:00:00.000+0530"},
+        "dueDate"			    :{ "$date" : "2016-11-09T09:00:00.000+0530"},
+        "status"				:"Open"
+	},
+	{
+        "taskAssignedBy"		:"Ganesh Swaminathan",
+        "taskAssignedTo"		:"Elli",
+        "taskTitle"		    	:"WebApp",
+        "taskDetails"		    :"Development projects to be moved to CSC Dev Cloud",
+        "assignedDate"		    :{ "$date" : "2016-12-04T09:00:00.000+0530"},
+        "dueDate"			    :{ "$date" : "2016-12-14T09:00:00.000+0530"},
+        "status"				:"Open"
+	},
+	{
+        "taskAssignedBy"		:"Ganesh Swaminathan",
+        "taskAssignedTo"		:"Ema",
+        "taskTitle"		    	:"Mobile App",
+        "taskDetails"		    :"Development projects to be moved to CSC Dev Cloud",
+        "assignedDate"		    :{ "$date" : "2017-01-04T09:00:00.000+0530"},
+        "dueDate"			    :{ "$date" : "2017-04-14T09:00:00.000+0530"},
+        "status"				:"Open"
 	}
 ] 

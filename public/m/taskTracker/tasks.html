@@ -1,0 +1,46 @@
+<div id="profile-details" header showprofile="false" icon="fa fa-plane" title1="Task Board" query='query' ></div>
+
+<div class="container">
+  <div class="row searchWrapper">
+    <div class="col-sm-3 col-md-3 col-xs-6">
+      <input type="text" class="form-control" placeholder="Search" ng-model="search.$" />
+    </div>
+ </div><!--row end here -->
+ 
+
+<div class="row" ng-controller="tasksCtrl">
+  <div class="my-visit-content col-sm-12">
+    <div class="cardContainer col-sm-12">
+        <div class="cardWrapper">
+          <ul>
+            <!--li ng-repeat="e in pagedData | filter: search | limitTo:pageSize">
+                {{e}}
+            </li-->
+            <li class="col-sm-12 cardItem" ng-repeat="task in pagedData | filter: search | limitTo:pageSize">
+                  <div class="card-header">test</div>
+                  <a class="pull-right" href="#/tasks/{{task._id}}/edit"><span class="fa fa-pencil-square-o addUserIcon"/></a>
+                  <section class="card-container">
+                    <div class="visitlinks">
+                      <h4>{{task.taskTitle}}</h4>
+                      <h6>Assigned To : {{task.taskAssignedTo}}</h6>
+                      <h6>Date : {{task.dueDate | date:'dd MMM yyyy'}}</h6>
+                      <h6>Status : {{task.status}}</h6>
+                      <div ng-if="(task.dueDate | date:'yyyy/MM/dd') <= (CurrentDate | date:'yyyy/MM/dd')"><i class="fa fa-flag" aria-hidden="true" style="color:red;"></i>
+                      </div>
+                    </div>
+                  </section>
+              </li>
+          </ul>
+        </div> 
+    </div>
+    <div class="pagination">
+          <button ng-disabled="pageButtonDisabled(-1)" ng-click="paginate(-1)" class="btn btn-primary">Previous</button>
+          <button ng-disabled="pageButtonDisabled(1)" ng-click="paginate(1)" class="btn btn-primary">Next</button>
+          <br /><br />
+          Page {{currentPage+1}} of {{totalPages}}
+    </div>
+  </div>
+  
+  </div><!--row end here -->
+  </div><!--container end here -->
+

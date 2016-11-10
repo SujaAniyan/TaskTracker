@@ -6,7 +6,7 @@ var mongoose = require('mongoose')
 var taskSchema = new mongoose.Schema({
 	taskAssignedBy		:{ type: String }, 
     taskAssignedTo		:{ type: String },
-	taskSummary		    :{ type: String },
+	taskTitle		    :{ type: String },
 	taskDetails		    :{ type: String },
     assignedDate		:{ type: Date },
 	dueDate			    :{ type: Date },

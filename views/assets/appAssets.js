@@ -188,12 +188,14 @@ module.exports = {
         "m-tasks":{
 		  "dev":[
                 "/public/m/taskTracker/task.js",
-                "/public/m/taskTracker/taskCtrl.js"              
+                "/public/m/taskTracker/taskCtrl.js",
+                "/public/assets/m/css/tasks.css"
             ],
             
             "prod":[
                 "/public/m/taskTracker/task.js",
-                "/public/m/taskTracker/taskCtrl.js"             
+                "/public/m/taskTracker/taskCtrl.js",
+                "/public/assets/m/css/tasks.css"
             ]
         },
 
