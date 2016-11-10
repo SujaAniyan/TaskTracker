@@ -24,7 +24,8 @@ router.get('/api/v1/secure/admin/users/find/find', users.getWithQuery);
 
 // List of service routes for tasks
 router.get('/api/v1/secure/tasks', tasks.getAll);
+router.post('/api/v1/secure/tasks', tasks.create);
 router.get('/api/v1/secure/tasks/:id', tasks.getOneById);
-router.post('/api/v1/secure/task/', tasks.create);
+router.put('/api/v1/secure/tasks/:id', tasks.updateById);
 
 module.exports = router;

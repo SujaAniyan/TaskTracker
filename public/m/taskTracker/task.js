@@ -16,9 +16,14 @@ angular.module('tasks', ['ngRoute','ngMaterial','angular-growl', 'ngFileUpload',
   $routeProvider
   
   .when('/tasks', {
-        templateUrl: '/public/m/taskTracker/tile.html',
-        controller: 'tasksCtrl'
+      templateUrl:'/public/m/taskTracker/tasks.html',
+      controller: 'tasksCtrl'
   })
+
+  .when('/tasks/:id/edit', {
+      templateUrl: '/public/m/taskTracker/edittasks.html',
+      controller: 'tasksCtrl'
+  });
   
   
   // if none of the above states are matched, use this as the fallback
