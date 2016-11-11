@@ -267,7 +267,21 @@ module.exports = {
 			"dev":[
 			"/public/libs/ngDraggable/ngDraggable.js"
 			]
-		}
+		},
+        
+         "angular-sanitize": {
+			"cdn": [
+			],
+			"dev":[
+			 "/public/libs/angular-sanitize/angular-sanitize.min.js"           
+			],
+			"prod":[
+             "/public/libs/angular-sanitize/angular-sanitize.min.js"
+			]
+		},
+        
+        
+        
 
 	}
 

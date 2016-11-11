@@ -43,8 +43,8 @@ function getOneById(id){
                 deferred.reject(err);
             }
             else
-                console.log(item);
-                deferred.resolve(item);
+               //console.log(item);
+               deferred.resolve(item);
         });
 
     return deferred.promise;

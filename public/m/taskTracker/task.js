@@ -1,4 +1,4 @@
-angular.module('tasks', ['ngRoute','ngMaterial','angular-growl', 'ngFileUpload', 'ngAnimate'])
+angular.module('tasks', ['ngRoute','ngMaterial','angular-growl', 'ngFileUpload', 'ngAnimate','ngSanitize'])
 
 .run(function ($rootScope, $location, $http) {
 	$http.get('/token')

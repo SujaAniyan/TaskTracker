@@ -7,7 +7,7 @@ module.exports = {
 		"home": [],
 		"admin": ["angular-material","angular-confirmDialog","angular-text","angular-forms","angular-fileupload","angular-image","angular-dropzone"],
 		"profile": ["angular-material","angular-text","angular-forms","angular-fileupload","angular-image","angular-dropzone"],
-        "m-tasks": ["angular-material","angular-text","angular-forms","angular-fileupload","angular-image","angular-dropzone", "angular-confirmDialog"],
+        "m-tasks": ["angular-material","angular-text","angular-forms","angular-fileupload","angular-image","angular-dropzone", "angular-confirmDialog",,"angular-sanitize"],
         "m-general" : ["jquery","bootstrap","font-awesome","utils"],
 		"m-angular" : ["jquery","angular-core","angular-growl"],
 		"m-home": []
