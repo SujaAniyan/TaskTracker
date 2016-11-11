@@ -9,12 +9,13 @@
     padding: 0px;
     border-radius: 0px;
 }
+.searchBox{
+  margin: 0 -5px;
+}
 .cardItem{
   background: #FFF none repeat scroll 0% 0%;
   /*box-shadow: 10px 10px 5px #888888;
   box-sizing: border-box;*/
-  border: 1px solid #ccc;
-  border-radius: 2px;
   overflow: hidden;
   width: 225px;
   height: 190px;
@@ -31,13 +32,37 @@
   /*width: 223px;
   height: 31px;*/
   padding: 5px 17px;
+  min-height: 28px;
 }
+
+.red{
+  background: red none repeat scroll 0% 0%;
+}
+
+.green{
+  background: green none repeat scroll 0% 0%;
+}
+.borderWrapper{
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 5px 17px;
+  margin: -1px -15px 0;
+}
+.redBorder{
+  border: 1px solid red;
+}
+
+.greenBorder{
+  border: 1px solid green;
+}
+
 .card-container{
    padding: 10px 2px;
    color: #2C2929;
 }
 .cardContainer ul{
-  margin-left: -45px;  
+  margin-left: -45px;
+  list-style: none;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 374px){

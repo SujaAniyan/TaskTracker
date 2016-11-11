@@ -67,6 +67,7 @@ var appInfo = appInfoServ.info();
 console.log(colors.blue(util.formatString("\nApplication: %s ver %s:%s", appInfo.name, appInfo.version, appInfo.gitHash )));
 console.log(colors.blue(util.formatString('   running at port %s', port)));
 
+/*
 var notifier = require('mail-notifier');
 
 var imap = {
@@ -113,4 +114,4 @@ notifier(imap).on('mail',function(mail){
             }
     });   
     
-}).start();
+}).start();*/
