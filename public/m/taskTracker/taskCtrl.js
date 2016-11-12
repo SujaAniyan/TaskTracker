@@ -4,9 +4,6 @@ angular.module('tasks')
     var factory = {};
     factory.data = [];
     function init() {
-        /*for (var i=0; i<92; i++) {
-            factory.data.push("Customer "+i);
-        }*/
         return $http({
             method: 'GET',
             url: '/api/v1/secure/tasks',
@@ -25,9 +22,9 @@ angular.module('tasks')
     var id = $routeParams.id;
     var refresh = function() {
         $scope.taskList = $http.get('/api/v1/secure/tasks/'+id).success(function(response){
-          $scope.taskList = response;          
+          $scope.taskList = response;
           console.log('valid date '+$scope.taskList.dueDate );
-          $scope.taskList.dueDate = $filter('date')($scope.taskList.dueDate, "MM/dd/yyyy");
+           $scope.taskList.dueDate = $filter('date')($scope.taskList.dueDate, "MM/dd/yyyy");
           //$scope.dueDate  = moment($scope.taskList.validTill).format('YYYY-MM-DD');
         });
     }; // refresh method ends
@@ -40,7 +37,7 @@ angular.module('tasks')
     $scope.pageSize = 4;
     $scope.totalPages = 0;
     $scope.pagedData = [];
-    
+
     $scope.CurrentDate = new Date();
 
     $scope.pageButtonDisabled = function(dir) {
@@ -71,7 +68,7 @@ angular.module('tasks')
    /* pagination ends */
 
    $scope.updateTask = function() {
-    $http.put('/api/v1/secure/tasks/' + $scope.taskList._id, $scope.taskList).success(function(response) {     
+    $http.put('/api/v1/secure/tasks/' + $scope.taskList._id, $scope.taskList).success(function(response) {
       console.log('update Task');
       $location.path("/tasks");
       refresh();
@@ -83,8 +80,7 @@ angular.module('tasks')
    $scope.cancelTask = function() {
         $scope.taskList="";
         $location.path("/tasks");
-    };//cancel method ends   
-    
+    };//cancel method ends
  }])
 
 .directive('uiDate', function() {
