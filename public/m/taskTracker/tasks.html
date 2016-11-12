@@ -59,6 +59,7 @@
                         <h6><i class="fa fa-calendar"></i> : {{task.dueDate | date:'dd MMM yyyy'}}</h6>
                         <h6>Status : {{task.status}}</h6>
 
+
                   <div class="card-header">test</div>
                   <a class="pull-right" href="#/tasks/{{task._id}}/edit"><span class="fa fa-pencil-square-o addUserIcon"/></a>
                   <section class="card-container">
@@ -70,7 +71,7 @@
                       <h6>Status : {{task.status}}</h6>
                       <div ng-if="(task.dueDate | date:'yyyy/MM/dd') <= (CurrentDate | date:'yyyy/MM/dd')"><i class="fa fa-flag" aria-hidden="true" style="color:red;"></i>
 
-                      </div>
+                  </div>
                     </section>
                   </div>
               </li>
@@ -87,4 +88,3 @@
   
   </div><!--row end here -->
   </div><!--container end here -->
-
