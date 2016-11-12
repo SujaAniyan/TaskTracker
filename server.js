@@ -72,7 +72,7 @@ var notifier = require('mail-notifier');
 
 var imap = {
       user: "saniyan@csc.com",
-      password: "Arun@5247",
+      password: "*****",
       host: "outlook.office365.com",
       port: 993,
       tls: true,
