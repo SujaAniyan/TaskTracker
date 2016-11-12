@@ -4,9 +4,6 @@ angular.module('tasks')
     var factory = {};
     factory.data = [];
     function init() {
-        /*for (var i=0; i<92; i++) {
-            factory.data.push("Customer "+i);
-        }*/
         return $http({
             method: 'GET',
             url: '/api/v1/secure/tasks',
@@ -118,5 +115,3 @@ angular.module('tasks')
     }
   };
 })
-
-

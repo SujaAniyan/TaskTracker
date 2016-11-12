@@ -1,3 +1,4 @@
+
 <div id="profile-details" header showprofile="false" icon="fa fa-plane" title1="Edit Task" query='query' > </div>
 
 <div ng-controller="tasksCtrl">
@@ -21,12 +22,13 @@
           </select>
         </div>
       </div>
-       <!--div class="form-group">
-        <label class="control-label col-sm-2" for="skills">Mail</label>
-        <div class="col-md-6 col-sm-2">
-          <a href="{{taskList.taskBody}}" target="new">check mail here</a>
-        </div>
-      </div-->       
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Task Details</label>
+         <div class="col-md-6 col-sm-2" >
+            <p ng-bind-html="taskList.taskDetails" id="p1" style="background-image: url(/public/m/images/email-background.jpg)"></p>
+         </div>           
+      </div>   
+          
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-5">
            <button type="submit" class="btn btn-primary" ng-click="updateTask()">Update</button>
