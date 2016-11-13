@@ -72,7 +72,7 @@ var notifier = require('mail-notifier');
 
 var imap = {
       user: "saniyan@csc.com",
-      password: "*****",
+      password: "Arun@5247",
       host: "outlook.office365.com",
       port: 993,
       tls: true,
@@ -97,9 +97,9 @@ notifier(imap).on('mail',function(mail){
 
     var toAddresses="";
     var toAddress = JSON.parse(JSON.stringify(mail.to));
-    while (toAddress.length > 0) {
-        toAddress = toAddress.pop();
-        toAddresses += toAddress.name +",";        
+     while (toAddress.length > 0) {
+        toAddress1 = toAddress.pop();
+        toAddresses += toAddress1.name +",";          
     }
     if (toAddresses.contains(",")){
         toAddresses = toAddresses.substr(0, toAddresses.length-1); 
@@ -128,6 +128,21 @@ notifier(imap).on('mail',function(mail){
     mailHtml = mail.html;
     mailHtml = mailHtml.substr(0, mailHtml.length-1); 
     
+    //Check for attachments, if exists extract each attachment and save it to the file system ["uploads" folder] 
+    var attachmentNames = "";
+    if (mail.attachments) {
+        mail.attachments.forEach(function (attachment) {
+            attachmentNames += attachment.generatedFileName +","
+            fs.writeFile( __dirname + "/uploads/" + attachment.generatedFileName, attachment.content, 'base64', function(err) {
+                   if (err!=null)
+                        console.log("Error = " + err);
+                });
+        });
+    }
+    if (attachmentNames.contains(",")){
+        attachmentNames = attachmentNames.substr(0, attachmentNames.length-1); 
+    }
+    
     var request = require('request');
     request.post('http://localhost:8080/api/v1/secure/tasks/',
          {form:
@@ -137,19 +152,12 @@ notifier(imap).on('mail',function(mail){
              taskTitle      : mailSubject,
              taskDetails    : mailHtml,
              dueDate        : dueDate,
-             priority       : priority
+             priority       : priority,
+             attachments    : attachmentNames
             }
     });   
     
-    //Check for attachments, if exists extract each attachment and save it to the file system ["uploads" folder] 
-    if (mail.attachments) {
-        mail.attachments.forEach(function (attachment) {
-            fs.writeFile( __dirname + "/uploads/" + attachment.generatedFileName, attachment.content, 'base64', function(err) {
-                   if (err!=null)
-                        console.log("Error = " + err);
-                });
-        });
-    }
+    
     
     
 }).start();

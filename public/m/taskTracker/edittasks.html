@@ -23,12 +23,29 @@
         </div>
       </div>
       <div class="form-group">
+        <label class="control-label col-sm-2" for="skills">Priority</label>
+        <div class="col-md-6 col-sm-2">
+          <select name="type" ng-model="taskList.priority" ng-dropdown>
+              <option ng-option value="High">High</option>
+              <option ng-option value="High">Medium</option>
+              <option ng-option value="Low">Low</option>
+          </select>
+        </div>
+      </div> 
+      <div class="form-group">          
+        <label class="control-label col-sm-2" for="vertical">Attachment</label>
+        <div class="col-md-6 col-sm-2" ng-repeat="attachment in attachments">
+            <!-- <h5><a ng-href="/public/uploads/{{attachment}}">{{attachment}}</a></h5> -->            
+             <a ng-href="/public/uploads/{{attachment}}" ng-click="openAttachment('/public/uploads/'+attachment)">{{attachment}}</a>
+        </div>
+      </div>
+      <div class="form-group">
         <label class="control-label col-sm-2" >Task Details</label>
          <div class="col-md-6 col-sm-2" >
             <p ng-bind-html="taskList.taskDetails" id="p1" style="background-image: url(/public/m/images/email-background.jpg)"></p>
          </div>           
       </div>   
-          
+        
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-5">
            <button type="submit" class="btn btn-primary" ng-click="updateTask()">Update</button>

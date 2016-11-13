@@ -20,11 +20,15 @@ angular.module('tasks')
 
 .controller('tasksCtrl', ['$scope', '$routeParams', '$http', '$rootScope', '$filter', 'dataFactory', '$location', function($scope, $routeParams, $http, $rootScope, $filter, dataFactory, $location){
     var id = $routeParams.id;
+    $scope.attachments = [];
     var refresh = function() {
         $scope.taskList = $http.get('/api/v1/secure/tasks/'+id).success(function(response){
           $scope.taskList = response;
+          if ($scope.taskList.attachments != undefined && $scope.taskList.attachments != ""){
+              $scope.attachments = $scope.taskList.attachments.split(",");              
+          }
           console.log('valid date '+$scope.taskList.dueDate );
-           $scope.taskList.dueDate = $filter('date')($scope.taskList.dueDate, "MM/dd/yyyy");
+          $scope.taskList.dueDate = $filter('date')($scope.taskList.dueDate, "MM/dd/yyyy");
           //$scope.dueDate  = moment($scope.taskList.validTill).format('YYYY-MM-DD');
         });
     }; // refresh method ends
@@ -34,7 +38,7 @@ angular.module('tasks')
    /*pagination start for tasks */
 
     $scope.currentPage = 0;
-    $scope.pageSize = 4;
+    $scope.pageSize = 8;
     $scope.totalPages = 0;
     $scope.pagedData = [];
 
@@ -81,6 +85,12 @@ angular.module('tasks')
         $scope.taskList="";
         $location.path("/tasks");
     };//cancel method ends
+    
+    $scope.openAttachment = function(path) {
+        console.log(path);
+        $location.path(path);
+    };
+    
  }])
 
 .directive('uiDate', function() {

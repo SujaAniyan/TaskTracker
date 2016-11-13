@@ -8,9 +8,11 @@ var taskSchema = new mongoose.Schema({
     taskAssignedTo		:{ type: String },
 	taskTitle		    :{ type: String },
 	taskDetails		    :{ type: String },
+    priority            :{type: String, default: 'Medium'},   
     assignedDate		:{ type: Date },
 	dueDate			    :{ type: Date },
-    status			    :{type: String, default: 'Open'}   
+    status			    :{ type: String, default: 'Open' },
+    attachments         :{ type: String }
 });
 
 module.exports = mongoose.model('tasks', taskSchema);
